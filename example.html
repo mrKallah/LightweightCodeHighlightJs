@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lightweight Code Highlighter Example</title>
+    <link rel="stylesheet" href="code_highlight.css">
+    <style>
+        body {
+            background: #222;
+            color: #eee;
+            font-family: Arial, sans-serif;
+            padding: 2rem;
+        }
+        h1, h2 {
+            color: lightgray;
+        }
+        .section {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lightweight Code Highlighter Demo</h1>
+    
+    <div class="section">
+        <h2>Examples from README.md</h2>
+<pre class="code">
+    {
+        "Example": "JSON"
+    }
+</pre>
+
+<pre class="code no-copy">
+    {
+        "Example": "JSON"
+    }
+</pre>
+
+<span class="inline-code">{"Example": "JSON"}</span>
+        </pre>
+    </div>
+
+    <div class="section">
+        <h2>JavaScript Example</h2>
+        <pre class="code">
+function greet(name) {
+    // Print a greeting
+    if (name) {
+        return "Hello, " + name + "!";
+    } else {
+        return "Hello, world!";
+    }
+}
+        </pre>
+    </div>
+    <div class="section">
+        <h2>Python Example</h2>
+        <pre class="code">
+def add(a, b):
+    """Add two numbers"""
+    return a + b  # returns the sum
+        </pre>
+    </div>
+    <div class="section">
+        <h2>Shell Command Example</h2>
+        <pre class="code">
+curl -X POST https://api.example.com/data --header "Authorization: Bearer TOKEN" --data '{"key":"value"}'
+        </pre>
+    </div>
+    <div class="section">
+        <h2>JSON Example</h2>
+        <pre class="code code-copy">
+{
+    "name": "Lightweight Highlighter",
+    "version": 1.0,
+    "active": true
+}
+        </pre>
+    </div>
+    <div class="section">
+        <h2>Inline Code Example</h2>
+        <span class="inline-code">{ "inline": "JSON" }</span>
+    </div>
+    <script src="code_highlight.js"></script>
+</body>
+</html>

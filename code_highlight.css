@@ -1,0 +1,115 @@
+.code {
+    display: inline-block;
+    width: 100%;
+    padding: 5px;
+    background-color: #15161a;
+    color: lightgray;
+    font-family: 'Courier New', Courier, monospace;
+    overflow-wrap: break-word;  /* Allows breaking long words */
+    white-space: pre-wrap;       /* Maintains whitespace and wraps text */
+    position: relative;
+    padding-right: 40px;
+}
+
+.copy-button {
+    /* display: none;  */
+    display: inline; 
+    /* position: fixed; */
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 2px 5px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    z-index: 10;
+}
+
+.code:hover .copy-button {
+    display: inline; /* Show button on hover */
+}
+
+div.str{
+	display: inline;
+	color: seagreen !important;
+}
+
+span.comment{
+	color: dimgray !important;
+}
+
+div.str span.number {
+    color: inherit; /* Reset the color to the default (inherits from the parent) */
+}
+
+span.comment span.number {
+    color: inherit; /* Reset the color to the default (inherits from the parent) */
+}
+
+span.number{
+	color: indianred;
+}
+
+
+div.str span.keyword {
+    color: inherit; /* Reset the color to the default (inherits from the parent) */
+}
+
+span.comment span.keyword {
+    color: inherit; /* Reset the color to the default (inherits from the parent) */
+}
+
+span.keyword{
+	display: inline;
+	color: darkorange;
+}
+
+div.str span.shell {
+    color: inherit; /* Reset the color to the default (inherits from the parent) */
+}
+
+span.comment span.shell {
+    color: inherit; /* Reset the color to the default (inherits from the parent) */
+}
+
+span.shell{
+	display: inline;
+	color: darkorange;
+}
+
+div.str span.specialChar {
+    color: inherit; /* Reset the color to the default (inherits from the parent) */
+}
+
+span.comment span.specialChar {
+    color: inherit; /* Reset the color to the default (inherits from the parent) */
+}
+
+span.specialChar{
+	display: inline;
+	color: darkorange !important;
+}
+
+div.str span.param {
+    color: inherit; /* Reset the color to the default (inherits from the parent) */
+}
+
+span.comment span.param {
+    color: inherit; /* Reset the color to the default (inherits from the parent) */
+}
+
+span.param{
+	display: inline;
+	color: tomato !important;
+}
+
+.inline-code{
+    background-color: #15161a;
+    color: seagreen;
+    padding: 0.1rem 0.1rem;
+    font-family: monospace;
+    border-radius: 0.4rem;
+}
