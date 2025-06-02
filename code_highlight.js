@@ -8,7 +8,13 @@ function copyToClipboard(text) {
     document.body.removeChild(textarea);
 }
 
+var tmp = ""
+
 function syntaxHighlight(code) {
+    console.log("syntaxHighlighting on code:", code);
+
+    // Escape HTML tags to prevent them from being interpreted
+    code = code.replaceAll("<", "&lt;").replaceAll("&gt;", ">");
 
     // Save tags first
     let tags = Array.from(code.matchAll(/<[^>]*>/g), m => m[0]);
@@ -162,6 +168,9 @@ function removeNestedTags(code) {
 
 
 function run_highlight(element) {
+    console.log("Running highlight on element:", element);
+
+
     element.querySelectorAll(".code").forEach(function (codeBlock) {
         if (codeBlock.querySelector(".copy-button")){
             return
@@ -170,25 +179,15 @@ function run_highlight(element) {
         const highlightedCode = syntaxHighlight(code);
         codeBlock.innerHTML = highlightedCode;
 
+        if (codeBlock.classList.contains("no-copy")) {
+            return; // Skip adding the copy button if the class is present
+        }
+
         // Add copy button to each code block
         const copyButton = document.createElement("button");
         copyButton.textContent = "Copy";
         copyButton.classList.add("copy-button");
 
-        // // Get the bounding box of the element
-        // let boundingBox = codeBlock.getBoundingClientRect();
-        // let topRightX = boundingBox.right;
-        // let topRightY = boundingBox.top;
-
-        // buttonWidth = 65
-        // copyButton.style.width = `${buttonWidth}px`
-        // copyButton.style.left = `${topRightX-buttonWidth}px`;
-        // copyButton.style.top = `${topRightY}px`;
-
- 
-        if (codeBlock.classList.contains("no-copy")) {
-            return; // Skip adding the copy button if the class is present
-        }
         // Add copy functionality
         copyButton.addEventListener("click", function () {
 
