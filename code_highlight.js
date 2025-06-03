@@ -8,8 +8,6 @@ function copyToClipboard(text) {
     document.body.removeChild(textarea);
 }
 
-var tmp = ""
-
 function syntaxHighlight(code) {
 
     // Escape HTML tags to prevent them from being interpreted
