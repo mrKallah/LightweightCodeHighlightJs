@@ -11,7 +11,6 @@ function copyToClipboard(text) {
 var tmp = ""
 
 function syntaxHighlight(code) {
-    console.log("syntaxHighlighting on code:", code);
 
     // Escape HTML tags to prevent them from being interpreted
     code = code.replaceAll("<", "&lt;").replaceAll("&gt;", ">");
@@ -168,9 +167,6 @@ function removeNestedTags(code) {
 
 
 function run_highlight(element) {
-    console.log("Running highlight on element:", element);
-
-
     element.querySelectorAll(".code").forEach(function (codeBlock) {
         if (codeBlock.querySelector(".copy-button")){
             return
@@ -222,7 +218,6 @@ document.addEventListener("DOMContentLoaded", function () {
     // runs everytime the page has cahnged
     const observer = new MutationObserver((mutations) => {
         mutations.forEach((mutation) => {
-            // console.log(mutation.target)
             run_highlight(mutation.target)
         })
     });
